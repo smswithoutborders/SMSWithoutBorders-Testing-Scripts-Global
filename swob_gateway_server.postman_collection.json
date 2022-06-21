@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "a96886d8-cbe6-4f71-b446-f566dfd7922e",
+		"name": "SWOB Gateway Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://staging.smswithoutborders.com/ping",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"IMSI\": \"sample_IMSI\", \n    \"LPS\": 1648206122.81431, \n    \"MSISDN\": \"sample_MSISDN\", \n    \"seed_type\": \"seed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://staging.smswithoutborders.com/ping",
+					"protocol": "https",
+					"host": [
+						"staging",
+						"smswithoutborders",
+						"com"
+					],
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
